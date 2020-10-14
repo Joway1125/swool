@@ -1,6 +1,6 @@
 <?php
 
-$server = new Swoole\server('127.0.0.1',9501);
+$server = new Swoole('127.0.0.1',9501);
 
 //监听链接进入事件
 $server->on('Connect',function ($server,$fd){
@@ -8,8 +8,8 @@ $server->on('Connect',function ($server,$fd){
 });
 
 //监听数据接收事件
-$server->on('Receive',function ($servce,$fd,$from_id,$data){
-   $servce->send($fd,"Server: ".$data);
+$server->on('Receive',function ($server,$fd,$from_id,$data){
+    $server->send($fd,"Server: ".$data);
 });
 
 //监听连接关闭事件
