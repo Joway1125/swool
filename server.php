@@ -1,6 +1,6 @@
 <?php
 
-$server = new swoole_server('127.0.0.1',9501);
+$server = new Swoole\Server('0.0.0.0',9501);
 
 //监听链接进入事件
 $server->on('Connect',function ($server,$fd){
