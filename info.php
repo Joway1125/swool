@@ -1,3 +1,5 @@
 <?php
 
-echo phpinfo();
+
+
+var_dump(php_sapi_name());exit();
